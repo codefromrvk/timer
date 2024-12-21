@@ -109,7 +109,12 @@ export const TimerItem: React.FC<TimerItemProps> = ({ timer }) => {
             <div className="flex gap-2">
               <Button
                 variant="text"
-                onClick={() => setIsEditModalOpen(true)}
+                onClick={() => {
+                  if(timer.isRunning){
+                    return toast.error("Hold on mate! Pause the timer before editing it.")
+                  }
+                  setIsEditModalOpen(true)
+                }}
                 className="!p-2 !rounded-full hover:bg-blue-50 text-blue-500 transition-colors"
                 title="Edit Timer"
               >
