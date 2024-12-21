@@ -4,7 +4,7 @@ import { Timer } from "../types/timer";
 import { formatTime } from "../utils/time";
 import { useTimerStore } from "../store/useTimerStore";
 import { toast } from "sonner";
-import { EditTimerModal } from "./EditTimerModal";
+import { TimerModal } from "./TimerModal";
 import { TimerAudio } from "../utils/audio";
 import { TimerControls } from "./TimerControls";
 import { TimerProgress } from "./TimerProgress";
@@ -36,6 +36,7 @@ export const TimerItem: React.FC<TimerItemProps> = ({ timer }) => {
 
           toast.success(`Timer "${timer.title}" has ended!`, {
             duration: Infinity,
+            position: window.innerWidth >= 768 ? "top-right" : "bottom-center",
             action: {
               label: "Dismiss",
               onClick: () => {
@@ -47,11 +48,9 @@ export const TimerItem: React.FC<TimerItemProps> = ({ timer }) => {
           });
         }
       }, 1000);
-      console.log(`setting interval ${timer.title}`, intervalRef);
     }
 
     return () => {
-      console.log(`clearing interval ${timer.title}`, intervalRef);
       clearInterval(intervalRef.current!);
     };
   }, [timer.isRunning, timer.id, timer.remainingTime, timer.title, timerAudio]);
@@ -150,7 +149,7 @@ export const TimerItem: React.FC<TimerItemProps> = ({ timer }) => {
         </div>
       </div>
 
-      <EditTimerModal
+      <TimerModal
         isOpen={isEditModalOpen}
         onClose={() => setIsEditModalOpen(false)}
         timer={timer}
