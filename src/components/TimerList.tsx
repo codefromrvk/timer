@@ -6,10 +6,14 @@ import { EmptyState } from './EmptyState';
 export const TimerList: React.FC = () => {
   const { timers } = useTimerStore();
 
+  // console.log(`1stttt`, timers[0].title,timers[0].isRunning);
+  // console.log(`2ndd`, timers[1].title,timers[1].isRunning);
+  
+
   return (
-    <div className="space-y-4 min-h-[400px]">
+    <div className="space-y-4 min-h-[400px] my-12">
       {timers.length === 0 ? (
-        <div className="h-[400px] flex flex-col items-center justify-center">
+        <div className="h-[400px] flex flex-col items-center justify-center my-20">
           <EmptyState />
           <p className="text-center text-gray-500 text-xl font-medium">
             No timers yet. Add one to get started!
