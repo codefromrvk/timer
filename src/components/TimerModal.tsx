@@ -56,6 +56,8 @@ export const TimerModal: React.FC<TimerModalProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log(`clcike`);
+    
 
     if (!validateTimerForm({ title, description, hours, minutes, seconds })) {
       return;
@@ -111,14 +113,15 @@ export const TimerModal: React.FC<TimerModalProps> = ({
         <div className="flex justify-between items-center mb-6">
           <div className="flex items-center gap-2">
             <Clock className="w-5 h-5 text-blue-600" />
-            <h2 className="text-xl font-semibold">Edit Timer</h2>
+            <h2 className="text-xl font-semibold">{timer?"Edit Timer": "Add Timer"}</h2>
           </div>
-          <button
+          <Button
             onClick={handleClose}
-            className="p-1 hover:bg-gray-100 rounded-full transition-colors"
+            className="!p-1 hover:bg-gray-100 !rounded-full transition-colors"
+            variant="text"
           >
             <X className="w-5 h-5" />
-          </button>
+          </Button>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -232,12 +235,7 @@ export const TimerModal: React.FC<TimerModalProps> = ({
             </Button>
             <Button
               type="submit"
-              className={`${
-                isTitleValid && isTimeValid
-                  ? "bg-blue-600 hover:bg-blue-700"
-                  : "bg-blue-400 cursor-not-allowed"
-              }`}
-              disabled={!isTitleValid || !isTimeValid}
+              onClick={handleSubmit}
             >
               {timer ? "Save Changes" : "Add Timer"}
             </Button>

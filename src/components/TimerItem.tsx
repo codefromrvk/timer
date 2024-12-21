@@ -8,6 +8,7 @@ import { TimerModal } from "./TimerModal";
 import { TimerAudio } from "../utils/audio";
 import { TimerControls } from "./TimerControls";
 import { TimerProgress } from "./TimerProgress";
+import Button from "./common/Button";
 
 interface TimerItemProps {
   timer: Timer;
@@ -106,27 +107,30 @@ export const TimerItem: React.FC<TimerItemProps> = ({ timer }) => {
               <p className="text-gray-600 mt-1">{timer.description}</p>
             </div>
             <div className="flex gap-2">
-              <button
+              <Button
+                variant="text"
                 onClick={() => setIsEditModalOpen(true)}
-                className="p-2 rounded-full hover:bg-blue-50 text-blue-500 transition-colors"
+                className="!p-2 !rounded-full hover:bg-blue-50 text-blue-500 transition-colors"
                 title="Edit Timer"
               >
                 <Pencil className="w-5 h-5" />
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="text"
                 onClick={handleRestart}
-                className="p-2 rounded-full hover:bg-blue-50 text-blue-500 transition-colors"
+                className="!p-2 !rounded-full hover:bg-blue-50 text-blue-500 transition-colors"
                 title="Restart Timer"
               >
                 <RotateCcw className="w-5 h-5" />
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="text"
                 onClick={handleDelete}
-                className="p-2 rounded-full hover:bg-red-50 text-red-500 transition-colors"
+                className="!p-2 !rounded-full hover:bg-red-50 text-red-500 transition-colors"
                 title="Delete Timer"
               >
                 <Trash2 className="w-5 h-5" />
-              </button>
+              </Button>
             </div>
           </div>
           <div className="flex flex-col items-center mt-6">
