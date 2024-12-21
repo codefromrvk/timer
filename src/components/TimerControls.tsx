@@ -21,7 +21,6 @@ export const TimerControls: React.FC<TimerControlsProps> = ({
   
   if (isCompleted) {
     return (
-    <>
       <Button
         onClick={onRestart}
         className="!p-3 !rounded-full bg-blue-100 text-blue-600 hover:bg-blue-200 transition-colors"
@@ -30,15 +29,6 @@ export const TimerControls: React.FC<TimerControlsProps> = ({
       >
         <RotateCcw className="w-6 h-6" />
       </Button>
-      {/* <button
-        onClick={onRestart}
-        className="p-3 rounded-full bg-blue-100 text-blue-600 hover:bg-blue-200 transition-colors"
-        title="Restart Timer"
-        // variant='text'
-      >
-        <RotateCcw className="w-6 h-6" />
-      </button> */}
-    </>
     );
   }
 
