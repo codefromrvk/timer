@@ -22,6 +22,9 @@ All tasks mentioned in the original assignment have been completed, including:
 - 🗃️ Consolidating modal code.
 - ⚠️ Adding validation snack bars.
 - 📱 Ensuring responsive snack bar placement.
+## **❗ To-Do**
+
+The following tasks are yet to be completed:
 - 🧪 Writing unit and component tests.
 - 💾 Implementing timer persistence with localStorage.
 
