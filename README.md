@@ -57,6 +57,6 @@ Future improvements to the Timer App include:
 
 ## **📦 Deliverables**
 
-The completed project can be found at the following GitHub repository link: [GitHub Repository](https://github.com/CW-Codewalnut/timer)
+The completed project can be found at the following GitHub repository link: [GitHub Repository](https://github.com/CW-Codewalnut/timer) (Private repository)
 
 Thank you for reviewing my submission!
