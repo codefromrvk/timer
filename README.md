@@ -1,4 +1,4 @@
-# ⏱️ Timer App Assignment
+# ⏱️ Timer App
 
 Welcome to the Timer App Assignment! This project showcases a Timer App built with **React**, **Vite**, **Tailwind CSS**, and **Vitest** for testing. The app allows users to manage multiple timers simultaneously, with features such as snack bar notifications, localStorage persistence, and responsive design.
 
